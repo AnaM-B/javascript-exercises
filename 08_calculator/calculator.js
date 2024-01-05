@@ -6,41 +6,26 @@ const subtract = function(x, y) {
 	return x - y;
 };
 
-const sum = function() {
-  let sumResult = 0;
-
-	for (let i = 0; i < arguments[0].length; i++) {
-    sumResult += arguments[0][i];
-  }
-
-  return sumResult;
+const sum = function(array) {
+  return array.reduce((total, currentValue) => total + currentValue, 0);
 };
 
-const multiply = function() {
-  let product = 1;
-
-  for (let i = 0; i < arguments[0].length; i++) {
-    product *= arguments[0][i];
-  }
-
-  return product;
+const multiply = function(array) {
+  return array.reduce((product, current) => product * current);
 };
 
 const power = function(x, y) {
   return Math.pow(x, y);
 };
 
-const factorial = function(x) {
-	let factArray = [];
+const factorial = function(n) {
+  if (n === 0) return 1;
+   
   let product = 1;
 
-  for(let i = 0; i < x; i++) {
-    factArray.push(x - i);
-  }
-
-  for (let i = 0; i < factArray.length; i++) {
-    product *= factArray[i];
-  }
+  for(let i = n; i > 0; i--) {
+    product *= i
+  };
 
   return product;
 };
